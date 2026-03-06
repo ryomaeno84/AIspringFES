@@ -36,18 +36,32 @@ function initTabs() {
     });
 }
 
+// URLをaタグに変換するヘルパー
+function linkify(text) {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function (url) {
+        return `<a href="${url}" target="_blank">${url}</a>`;
+    });
+}
+
 function loadNews() {
     const container = document.getElementById('news-container');
     if (!container) return;
 
-    window.APP_DATA.news.forEach(news => {
+    // ステータスが "public" (または未定義=既存データ) のものだけを抽出
+    const publicNews = window.APP_DATA.news.filter(news => news.status === 'public' || !news.status);
+
+    publicNews.forEach(news => {
+        // 改行とリンク化の処理
+        const formattedContent = linkify(news.content).replace(/\n/g, '<br>');
+
         const li = document.createElement('li');
         li.className = 'news-item';
         li.innerHTML = `
             <div class="news-date">${news.date}</div>
             <div class="news-title">${news.title}</div>
-            <div class="news-detail" style="display:none; margin-top:15px; color:#ccc; border-left: 2px solid #d4af37; padding-left: 15px;">
-                ${news.content}
+            <div class="news-detail" style="display:none; margin-top:15px; color:#ccc; border-left: 2px solid #d4af37; padding-left: 15px; line-height: 1.6;">
+                ${formattedContent}
             </div>
         `;
         li.addEventListener('click', () => {
