@@ -13,7 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-close-preview').addEventListener('click', () => {
         document.getElementById('preview-modal').classList.add('hidden');
     });
+
+    // GitHub反映機能
+    document.getElementById('btn-deploy').addEventListener('click', deployToGitHub);
 });
+
+async function deployToGitHub() {
+    const isConfirm = confirm('変更内容がユーザーに見える形で公開されますがよろしいですか');
+    if (!isConfirm) return;
+
+    const statusEl = document.getElementById('deploy-status');
+    statusEl.textContent = '🔄 実行中...';
+    statusEl.style.color = 'var(--primary-color)';
+    statusEl.classList.remove('hidden');
+
+    try {
+        const response = await fetch('/api/deploy', { method: 'POST' });
+        const result = await response.json();
+
+        if (result.success) {
+            statusEl.textContent = '✔ 完了しました';
+            statusEl.style.color = 'var(--success-color)';
+        } else {
+            statusEl.textContent = '❌ エラー: ' + result.message;
+            statusEl.style.color = 'var(--danger-color)';
+        }
+    } catch (e) {
+        console.error(e);
+        statusEl.textContent = '❌ 通信エラー';
+        statusEl.style.color = 'var(--danger-color)';
+    }
+
+    setTimeout(() => {
+        statusEl.classList.add('hidden');
+    }, 5000);
+}
 
 async function fetchNews() {
     try {

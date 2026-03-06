@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 
 const app = express();
 const PORT = 3000;
@@ -19,10 +20,7 @@ function readData() {
         const jsonMatch = fileContent.match(/window\.APP_DATA\s*=\s*(\{[\s\S]*?\})\s*;/);
 
         if (jsonMatch && jsonMatch[1]) {
-            // Evaluates the string representation of the object literal into an actual object
-            // Use eval cautiously, but since we control content.js it's acceptable for this local admin tool
             let data;
-            // Safer evaluation
             const evalContent = `(${jsonMatch[1]})`;
             data = eval(evalContent);
             return data;
@@ -50,6 +48,23 @@ function writeData(data) {
         return false;
     }
 }
+
+// API: Deploy to GitHub
+app.post('/api/deploy', (req, res) => {
+    // 確実にUTF-8で実行するようにchcpを使用
+    const cmd = 'chcp 65001 > nul && git add . && git commit -m "Update from Admin UI" && git push origin main';
+    exec(cmd, { cwd: __dirname }, (error, stdout, stderr) => {
+        if (error) {
+            console.error('Deploy error:', error);
+            // 変更がない場合は実質エラーではないとして扱う（環境や言語設定による出力の差異を吸収）
+            if (stdout.includes('nothing to commit') || stderr.includes('nothing to commit')) {
+                return res.json({ success: true, message: '変更がありません' });
+            }
+            return res.status(500).json({ success: false, message: 'GitHubへの反映に失敗しました' });
+        }
+        res.json({ success: true, message: 'GitHubへの反映が完了しました' });
+    });
+});
 
 // API: Get current news
 app.get('/api/news', (req, res) => {
