@@ -17,7 +17,7 @@ window.APP_DATA = {
             "date": "2026.03.06",
             "title": "参加アーティストのグッズ販売をご紹介",
             "content": "GOODSのタブにAISpringFES2026に参加するアーティストのグッズ販売を紹介するnoteリンクを設置しました！色とりどりのアーティストグッズをぜひチェックしてくださいね！",
-            "status": "hidden"
+            "status": "public"
         },
         {
             "id": 1,
