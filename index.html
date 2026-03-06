@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISpringFES 2026 - 現代最高峰のAI音楽祭</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="kv-container">
+            <img src="assets/images/kv/Firefly_Gemini_Flash.webp" alt="AISpringFES 2026 Key Visual" class="kv-image">
+        </div>
+    </header>
+
+    <nav class="tabs-nav">
+        <ul class="tabs-list">
+            <li><button class="tab-btn active" data-tab="news">NEWS</button></li>
+            <li><button class="tab-btn" data-tab="about">ABOUT</button></li>
+            <li><button class="tab-btn" data-tab="timetable">TIMETABLE</button></li>
+            <li><button class="tab-btn" data-tab="guideline">GUIDELINE</button></li>
+            <li><button class="tab-btn" data-tab="artists">ARTISTS</button></li>
+            <li><button class="tab-btn" data-tab="goods">GOODS</button></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <!-- ニュースセクション -->
+        <section id="news" class="tab-content active">
+            <h2>LATEST NEWS</h2>
+            <ul class="news-list" id="news-container">
+                <!-- JSで流し込み -->
+            </ul>
+        </section>
+
+        <!-- 概要セクション -->
+        <section id="about" class="tab-content">
+            <h2>EVENT INFO</h2>
+            <div class="info-card">
+                <h3>CONCEPT</h3>
+                <p>現代最高峰のAI音楽祭</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>DATE</h4>
+                        <p>2026.03.29 (SUN)<br>
+                            前半の部：13:00～15:45<br>
+                            後半の部：19:00～21:45</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>ACTS</h4>
+                        <p>19 Artists (Main 10 / Flash 9)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- タイムテーブル -->
+        <section id="timetable" class="tab-content">
+            <h2>TIME TABLE</h2>
+            <p style="text-align:center;">Coming Soon...</p>
+        </section>
+
+        <!-- ガイドライン -->
+        <section id="guideline" class="tab-content">
+            <h2>GUIDELINE</h2>
+            <div class="guideline-container" id="guideline-text">
+                <!-- JSで流し込み -->
+            </div>
+        </section>
+
+        <!-- 出演者 -->
+        <section id="artists" class="tab-content">
+            <h2>ARTISTS</h2>
+            <div class="artist-grid" id="artist-container">
+                <!-- JSで流し込み -->
+            </div>
+        </section>
+
+        <!-- グッズ -->
+        <section id="goods" class="tab-content">
+            <h2>GOODS</h2>
+            <div class="goods-container">
+                <div class="goods-item">
+                    <h3>OFFICIAL GOODS</h3>
+                    <a href="https://suzuri.jp/teihen_ai_music_fes/products" target="_blank" class="x-link">SHOP
+                        ONLINE</a>
+                </div>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #333;">
+                <p style="font-size: 0.8rem; color: #888;">※各出演者の販売HPへのリンクは、販売の管理をいたしません。各ショップの利用規約に従ってください。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 100px 20px; text-align: center; border-top: 1px solid #333; margin-top: 100px;">
+        <p>&copy; 2026 AISpringFES Project. All rights reserved.</p>
+    </footer>
+
+    <script src="data/content.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
