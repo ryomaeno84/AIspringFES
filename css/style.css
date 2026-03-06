@@ -246,6 +246,46 @@ h2 {
     display: inline-block;
 }
 
+/* Footer */
+.site-footer {
+    padding: 80px 20px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 100px;
+    background: linear-gradient(to top, #000, #0a0a0a);
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.footer-message {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: #666;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     .tabs-list {
@@ -255,5 +295,10 @@ h2 {
     .tab-btn {
         padding: 8px 15px;
         font-size: 0.8rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
     }
 }
