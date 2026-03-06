@@ -28,7 +28,7 @@
 
     **【操作イメージ】**
     ターミナル（VS Code等の下部に表示される黒い画面）で以下のように表示されれば成功です。
-    ![ターミナル操作イメージ](file:///C:/Users/tamor/.gemini/antigravity/brain/4a5f16b1-7e68-46d9-b9a5-84865fe99a07/admin_terminal_setup_1772804338957.png)
+    ![ターミナル操作イメージ](assets/images/manual/admin_terminal.png)
 
 ---
 
@@ -46,7 +46,7 @@
 ### 3.1 画面の構成
 左側に「記事一覧」、右側に選択した記事の「編集エリア」が表示されます。
 
-![管理画面全体](file:///C:/Users/tamor/.gemini/antigravity/brain/4a5f16b1-7e68-46d9-b9a5-84865fe99a07/admin_panel_full_1772800106226.png)
+![管理画面全体](assets/images/manual/admin_full.png)
 
 ### 3.2 記事の追加・編集
 *   一覧から記事を選ぶか、「+ 新規追加」で新しい記事を作成します。
@@ -65,7 +65,7 @@
 1.  右上の **「GitHubに反映 (本番公開)」** ボタンをクリックします。
 2.  以下の確認メッセージが表示されるので、内容を確認して **「OK (反映する)」** をクリックしてください。
 
-![公開時の確認ダイアログ](file:///C:/Users/tamor/.gemini/antigravity/brain/4a5f16b1-7e68-46d9-b9a5-84865fe99a07/admin_deploy_confirmation_1772804506470.png)
+![公開時の確認ダイアログ](assets/images/manual/admin_confirm.png)
 
 *   **ステータス表示**: 実行中はボタンの横に「🔄 実行中」と表示され、完了すると「✔ 完了しました」に変わります。
 
