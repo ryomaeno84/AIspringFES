@@ -209,6 +209,18 @@ h2 {
 }
 
 /* Guidelines */
+.timetable-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timetable-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
 .guideline-container {
     background: var(--glass-bg);
     padding: 40px;
