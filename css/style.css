@@ -300,17 +300,50 @@ h2 {
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    .kv-container {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .tabs-nav {
+        padding: 10px 0;
+    }
+
     .tabs-list {
         gap: 5px;
+        padding: 0 10px;
     }
 
     .tab-btn {
-        padding: 8px 15px;
+        padding: 8px 12px;
         font-size: 0.8rem;
+    }
+
+    .tab-content {
+        padding: 20px 15px;
+    }
+
+    .tab-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .guideline-container {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .artist-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .site-footer {
+        padding: 30px 15px;
     }
 
     .footer-links {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 }
