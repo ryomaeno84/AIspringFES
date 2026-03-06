@@ -6,27 +6,6 @@
 window.APP_DATA = {
     "news": [
         {
-            "id": 5,
-            "date": "2026.03.06",
-            "title": "テスト3",
-            "content": "テスト3",
-            "status": "public"
-        },
-        {
-            "id": 5,
-            "date": "2026.03.06",
-            "title": "テスト2",
-            "content": "テスト2",
-            "status": "public"
-        },
-        {
-            "id": 4,
-            "date": "2026.03.06",
-            "title": "テスト1",
-            "content": "テスト1",
-            "status": "public"
-        },
-        {
             "id": 4,
             "date": "2026.03.06",
             "title": "📢参加アーティストのグッズ販売をご紹介",
@@ -52,6 +31,27 @@ window.APP_DATA = {
             "date": "2026.01.10",
             "title": "🎉開催日程のお知らせ",
             "content": "2026年3月29日(日)にYouTubeにてオンライン配信を行います。前半の部（13:00〜）と後半の部（19:00〜）の二部構成となります。",
+            "status": "public"
+        },
+        {
+            "id": 5,
+            "date": "2026.03.06",
+            "title": "テスト3",
+            "content": "テスト3",
+            "status": "public"
+        },
+        {
+            "id": 5,
+            "date": "2026.03.06",
+            "title": "テスト2",
+            "content": "テスト2",
+            "status": "public"
+        },
+        {
+            "id": 4,
+            "date": "2026.03.06",
+            "title": "テスト1",
+            "content": "テスト1",
             "status": "public"
         }
     ],
