@@ -84,14 +84,75 @@ function renderList() {
         const statusText = item.status === 'public' ? '公開中' : '非表示（下書き）';
 
         li.innerHTML = `
-            <div class="item-id">ID: ${displayId} | ${item.date}</div>
-            <div class="item-title">${item.title}</div>
-            <div class="item-status ${statusClass}">${statusText}</div>
+            <div class="item-main-info">
+                <div class="item-id">ID: ${displayId} | ${item.date}</div>
+                <div class="item-title">${item.title}</div>
+                <div class="item-status ${statusClass}">${statusText}</div>
+            </div>
+            <div class="order-controls">
+                <button class="btn-order btn-up" title="上へ" ${index === 0 ? 'disabled' : ''}>▲</button>
+                <button class="btn-order btn-down" title="下へ" ${index === newsData.length - 1 ? 'disabled' : ''}>▼</button>
+            </div>
         `;
 
-        li.addEventListener('click', () => selectItem(index));
+        // 項目自体のクリックで編集
+        li.querySelector('.item-main-info').addEventListener('click', () => selectItem(index));
+
+        // 並び替えボタンのイベント
+        const btnUp = li.querySelector('.btn-up');
+        const btnDown = li.querySelector('.btn-down');
+
+        if (btnUp) {
+            btnUp.addEventListener('click', (e) => {
+                e.stopPropagation();
+                moveItem(index, index - 1);
+            });
+        }
+        if (btnDown) {
+            btnDown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                moveItem(index, index + 1);
+            });
+        }
+
         list.appendChild(li);
     });
+}
+
+async function pushNewsDataToServer(successMsg) {
+    try {
+        const response = await fetch('/api/news', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newsData)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            renderList();
+            showStatusMessage(successMsg || '✔ 保存しました');
+        } else {
+            alert('保存に失敗しました。');
+        }
+    } catch (e) {
+        console.error(e);
+        alert('通信エラーが発生しました。');
+    }
+}
+
+async function moveItem(fromIndex, toIndex) {
+    if (toIndex < 0 || toIndex >= newsData.length) return;
+
+    const item = newsData.splice(fromIndex, 1)[0];
+    newsData.splice(toIndex, 0, item);
+
+    if (currentIndex === fromIndex) {
+        currentIndex = toIndex;
+    } else if (currentIndex === toIndex) {
+        currentIndex = fromIndex;
+    }
+
+    await pushNewsDataToServer('✔ 順序を保存しました');
 }
 
 function selectItem(index) {
@@ -167,32 +228,13 @@ async function saveNews(targetStatus) {
     };
 
     if (indexStr === 'new') {
-        // 新規追加 (先頭に追加)
         newsData.unshift(newItem);
         currentIndex = 0;
     } else {
-        // 更新
         newsData[parseInt(indexStr)] = newItem;
     }
 
-    try {
-        const response = await fetch('/api/news', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newsData)
-        });
-
-        const result = await response.json();
-        if (result.success) {
-            renderList();
-            showStatusMessage('✔ 保存しました');
-        } else {
-            alert('保存に失敗しました。');
-        }
-    } catch (e) {
-        console.error(e);
-        alert('通信エラーが発生しました。');
-    }
+    await pushNewsDataToServer('✔ 保存しました');
 }
 
 function showStatusMessage(msg) {

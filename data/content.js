@@ -6,11 +6,25 @@
 window.APP_DATA = {
     "news": [
         {
+            "id": 5,
+            "date": "2026.03.06",
+            "title": "テスト2",
+            "content": "テスト2",
+            "status": "public"
+        },
+        {
+            "id": 5,
+            "date": "2026.03.06",
+            "title": "テスト2",
+            "content": "テスト2",
+            "status": "public"
+        },
+        {
             "id": 4,
             "date": "2026.03.06",
-            "title": "参加アーティストのグッズ販売をご紹介",
-            "content": "GOODSのタブにAISpringFES2026に参加するアーティストのグッズ販売を紹介するnoteリンクを設置しました！色とりどりのアーティストグッズをぜひチェックしてくださいね！",
-            "status": "hidden"
+            "title": "テスト1",
+            "content": "テスト1",
+            "status": "public"
         },
         {
             "id": 4,
