@@ -111,7 +111,7 @@ function loadArtists() {
         const card = document.createElement('div');
         card.className = 'artist-card';
         card.innerHTML = `
-            <img src="assets/images/thumbs/${artist.id}.jpg" alt="${artist.name}" class="artist-thumb">
+            <img src="assets/images/thumbs/${artist.thumb}" alt="${artist.name}" class="artist-thumb">
             <div class="artist-name">${artist.name}</div>
             <a href="${artist.xLink}" target="_blank" class="x-link">X Profile</a>
         `;
