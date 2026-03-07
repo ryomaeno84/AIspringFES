@@ -209,6 +209,52 @@ h2 {
 }
 
 /* Guidelines */
+.about-container {
+    background: var(--glass-bg);
+    padding: 60px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-lead {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.about-container p {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-point {
+    margin: 50px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.about-point h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.about-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
+    margin-top: 50px !important;
+    text-align: center;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
 .timetable-container {
     text-align: center;
     margin-top: 20px;
