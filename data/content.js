@@ -30,8 +30,8 @@ window.APP_DATA = {
             "id": 6,
             "date": "2026.02.17",
             "title": "🎙出演者紹介記事　3rd Artist. 旧雅之さん公開！",
-            "content": "🎙出演者紹介記事　3rd Artist.旧雅之さん公開！\n\nnote\nhttps://note.com/maenoryo/n/na207637193b4",
-            "status": "hidden"
+            "content": "出演者紹介記事 三人目は旧雅之さん！\nぜひご覧ください！\n\nhttps://note.com/maenoryo/n/na207637193b4",
+            "status": "public"
         },
         {
             "id": 7,
