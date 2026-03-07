@@ -44,14 +44,20 @@ function linkify(text) {
     });
 }
 
-function loadNews() {
+function loadNews(showAll = false) {
     const container = document.getElementById('news-container');
     if (!container) return;
 
     // ステータスが "public" (または未定義=既存データ) のものだけを抽出
     const publicNews = window.APP_DATA.news.filter(news => news.status === 'public' || !news.status);
 
-    publicNews.forEach(news => {
+    // クリア
+    container.innerHTML = '';
+
+    // 表示する記事を決定
+    const displayNews = showAll ? publicNews : publicNews.slice(0, 5);
+
+    displayNews.forEach(news => {
         // 改行とリンク化の処理
         const formattedContent = linkify(news.content).replace(/\n/g, '<br>');
 
@@ -70,6 +76,18 @@ function loadNews() {
         });
         container.appendChild(li);
     });
+
+    // 5件以上あり、かつ全件表示中でない場合にボタンを表示
+    if (!showAll && publicNews.length > 5) {
+        const moreBtn = document.createElement('div');
+        moreBtn.className = 'show-all-btn';
+        moreBtn.textContent = '▼ すべて表示';
+        moreBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            loadNews(true);
+        });
+        container.appendChild(moreBtn);
+    }
 }
 
 function loadArtists() {
