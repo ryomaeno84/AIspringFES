@@ -230,6 +230,7 @@ async function saveNews(targetStatus) {
     if (indexStr === 'new') {
         newsData.unshift(newItem);
         currentIndex = 0;
+        document.getElementById('news-id').value = 0; // 編集モードに切り替え
     } else {
         newsData[parseInt(indexStr)] = newItem;
     }
