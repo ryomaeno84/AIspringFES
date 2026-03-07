@@ -94,6 +94,26 @@ header {
     border-color: var(--accent-color);
 }
 
+.news-toggle-btn {
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px dashed var(--border-color);
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+}
+
+.news-toggle-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
 /* Content Sections */
 .tab-content {
     display: none;

@@ -77,16 +77,29 @@ function loadNews(showAll = false) {
         container.appendChild(li);
     });
 
-    // 5件以上あり、かつ全件表示中でない場合にボタンを表示
-    if (!showAll && publicNews.length > 5) {
-        const moreBtn = document.createElement('div');
-        moreBtn.className = 'show-all-btn';
-        moreBtn.textContent = '▼ すべて表示';
-        moreBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            loadNews(true);
-        });
-        container.appendChild(moreBtn);
+    // 表示切り替えボタンの表示
+    if (publicNews.length > 5) {
+        const toggleBtn = document.createElement('div');
+        toggleBtn.className = 'news-toggle-btn';
+
+        if (!showAll) {
+            toggleBtn.textContent = '▼ すべて表示';
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                loadNews(true);
+            });
+        } else {
+            toggleBtn.textContent = '▲ 5件表示に戻す';
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                loadNews(false);
+                // ニュースセクションの先頭へスクロール
+                const newsSection = document.getElementById('news');
+                const navHeight = document.querySelector('.tabs-nav').offsetHeight;
+                window.scrollTo({ top: newsSection.offsetTop - navHeight - 20, behavior: 'smooth' });
+            });
+        }
+        container.appendChild(toggleBtn);
     }
 }
 
