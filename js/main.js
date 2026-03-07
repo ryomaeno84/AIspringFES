@@ -66,7 +66,7 @@ function loadNews(showAll = false) {
         li.innerHTML = `
             <div class="news-date">${news.date}</div>
             <div class="news-title">${news.title}</div>
-            <div class="news-detail" style="display:none; margin-top:15px; color:#ccc; border-left: 2px solid #d4af37; padding-left: 15px; line-height: 1.6;">
+            <div class="news-detail">
                 ${formattedContent}
             </div>
         `;

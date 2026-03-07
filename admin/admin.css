@@ -282,9 +282,14 @@ textarea {
     border-left: 2px solid #d4af37;
     padding-left: 15px;
     line-height: 1.6;
+    word-break: break-all;
 }
 
 .preview-detail a {
-    color: #d4af37;
+    color: #00ccff;
+    text-decoration: none;
+}
+
+.preview-detail a:hover {
     text-decoration: underline;
 }

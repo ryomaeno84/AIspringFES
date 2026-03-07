@@ -228,6 +228,28 @@ h2 {
     transition: color 0.3s ease;
 }
 
+.news-detail {
+    display: none;
+    margin-top: 15px;
+    color: #ccc;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 15px;
+    line-height: 1.6;
+    word-break: break-all;
+}
+
+.news-detail a {
+    color: #00ccff;
+    /* 視認性の高い水色 */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.news-detail a:hover {
+    color: #80dfff;
+    text-decoration: underline;
+}
+
 /* Guidelines */
 .about-container {
     background: var(--glass-bg);
