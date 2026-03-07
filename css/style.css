@@ -321,11 +321,11 @@ h2 {
 }
 
 .signature-image {
-    width: 200px;
+    width: 250px;
     height: auto;
     filter: brightness(1.2) contrast(1.1);
-    opacity: 0.9;
-    margin-top: -10px;
+    opacity: 0.95;
+    margin-top: -20px;
     /* テキストに少し重ねて馴染ませる */
 }
 
@@ -420,6 +420,10 @@ h2 {
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    .signature-image {
+        width: 180px;
+    }
+
     .kv-container {
         margin-top: 10px;
         padding: 0 10px;
