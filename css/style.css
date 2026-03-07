@@ -325,9 +325,10 @@ h2 {
     height: auto;
     filter: brightness(1.2) contrast(1.1);
     opacity: 0.95;
-    margin-top: 10px;
-    margin-right: -40px;
-    /* 手書き文字の右端をテキストに合わせる調整 */
+    margin-top: 5px;
+    /* テキストとの間隔を詰める */
+    margin-right: -25px;
+    /* 右端を揃えるための微調整（画像準拠） */
 }
 
 .timetable-container {
