@@ -325,8 +325,8 @@ h2 {
     height: auto;
     filter: brightness(1.2) contrast(1.1);
     opacity: 0.95;
-    margin-top: 30px;
-    /* 垂直方向の間隔を大幅に広げる */
+    margin-top: -15px;
+    /* テキストに近づける（画像準拠） */
     margin-right: -25px;
     /* 右端を揃えるための微調整（画像準拠） */
 }
