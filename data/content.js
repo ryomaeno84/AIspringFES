@@ -6,17 +6,24 @@
 window.APP_DATA = {
     "news": [
         {
-            "id": 4,
-            "date": "2026.03.06",
-            "title": "📢参加アーティストのグッズ販売をご紹介",
-            "content": "GOODSのタブにAISpringFES2026に参加するアーティストのグッズ販売を紹介するnoteリンクを設置しました！色とりどりのアーティストグッズをぜひチェックしてくださいね！",
-            "status": "public"
-        },
-        {
             "id": 1,
             "date": "2026.03.06",
             "title": "📢公式サイト、プレオープンのお知らせ",
             "content": "AISpringFES 2026の公式サイトがプレオープンしました。SNS初のAI動画・音楽生成MVフェスティバルとして、最高のエンターテインメントをお届けします。最新情報を順次公開していきますので、公式X( https://x.com/AI_animeryo )のフォローもお願いいたします。",
+            "status": "public"
+        },
+        {
+            "id": 13,
+            "date": "2026.03.01",
+            "title": "🎙出演者紹介記事　8th Artist. SDAI＠ELEMAYUちゃんねるのひとさん公開！",
+            "content": "出演者紹介記事 八人目はSDAI＠ELEMAYUちゃんねるのひとさん！\nぜひご覧ください！\n\nhttps://note.com/maenoryo/n/n9613a383d847",
+            "status": "public"
+        },
+        {
+            "id": 4,
+            "date": "2026.03.06",
+            "title": "📢出演者様グッズ販売＆音源配信サイト一覧",
+            "content": "GOODSのタブにAISpringFES2026に参加するアーティストのグッズ販売を紹介するnoteリンクを設置しました！\n色とりどりのアーティストグッズをぜひチェックしてくださいね！\n\n----\nnoteでもご紹介しています\nhttps://note.com/maenoryo/n/ncaeb82113a58",
             "status": "public"
         },
         {
