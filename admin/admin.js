@@ -216,8 +216,10 @@ function showPreview() {
 }
 
 async function saveNews(targetStatus) {
-    const indexStr = document.getElementById('news-id').value;
     const numId = parseInt(document.getElementById('news-number-id').value);
+
+    // 新規作成かどうかのフラグ
+    const isNew = document.getElementById('news-id').value === 'new';
 
     const newItem = {
         id: numId,
@@ -227,13 +229,24 @@ async function saveNews(targetStatus) {
         status: targetStatus
     };
 
-    if (indexStr === 'new') {
+    // IDで既存の記事を探す（インデックスのズレに左右されないようにするため）
+    const existingIndex = newsData.findIndex(item => item.id === numId);
+
+    if (existingIndex !== -1) {
+        // 既存記事の更新
+        newsData[existingIndex] = newItem;
+        currentIndex = existingIndex;
+    } else {
+        // 新規記事として追加
         newsData.unshift(newItem);
         currentIndex = 0;
-        document.getElementById('news-id').value = 0; // 編集モードに切り替え
-    } else {
-        newsData[parseInt(indexStr)] = newItem;
     }
+
+    // 保存後は常に現在のインデックスで編集モードに移行（重複防止）
+    document.getElementById('news-id').value = currentIndex;
+
+    // タイトルの更新 (IDが変わることはないが、表示を編集モードに合わせる)
+    document.getElementById('editor-title').textContent = `記事の編集 (ID: ${String(numId).padStart(2, '0')})`;
 
     await pushNewsDataToServer('✔ 保存しました');
 }
