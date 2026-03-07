@@ -184,7 +184,7 @@ window.APP_DATA = {
         },
         {
             "id": "08",
-            "name": "nnoriyang@♠️AIart❤️poker",
+            "name": "noriyang@♠️AIart❤️poker",
             "xLink": "https://x.com/noriyang_crypt",
             "type": "main",
             "thumb": "08b.webp"
