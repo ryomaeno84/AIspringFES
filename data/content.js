@@ -16,7 +16,7 @@ window.APP_DATA = {
             "id": 19,
             "date": "2026.03.08",
             "title": "#AISpringFES2026 出演者様インタビュー記事　9th Artist. STN",
-            "content": "出演者紹介記事 九人目九STNさん！\nぜひご覧ください！\n\nhttps://note.com/maenoryo/n/nc3036b270830?sub_rt=share_pw",
+            "content": "出演者紹介記事 九人目はSTNさん！\nぜひご覧ください！https://note.com/maenoryo/n/nc3036b270830?sub_rt=share_pw",
             "status": "public"
         },
         {
