@@ -6,6 +6,13 @@
 window.APP_DATA = {
     "news": [
         {
+            "id": 20,
+            "date": "2026.03.10",
+            "title": "#AISpringFES2026 出演者様インタビュー記事　10th Artist. noriyang",
+            "content": "出演者紹介記事 十人目はnoriyangさん！\nぜひご覧ください！ https://note.com/maenoryo/n/n47c2cc69b3a8",
+            "status": "public"
+        },
+        {
             "id": 19,
             "date": "2026.03.08",
             "title": "#AISpringFES2026 出演者様インタビュー記事　9th Artist. STN",
