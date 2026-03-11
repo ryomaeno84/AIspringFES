@@ -6,6 +6,13 @@
 window.APP_DATA = {
     "news": [
         {
+            "id": 21,
+            "date": "2026.03.11",
+            "title": "#AISpringFES2026 出演者様インタビュー記事　11th Artist. アルパカ紳士",
+            "content": "出演者紹介記事１１人目はアルパカ紳士さん！\nぜひご覧ください！https://note.com/maenoryo/n/nf7c453b490c2",
+            "status": "public"
+        },
+        {
             "id": 20,
             "date": "2026.03.10",
             "title": "#AISpringFES2026 出演者様インタビュー記事　10th Artist. noriyang",
