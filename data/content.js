@@ -6,13 +6,6 @@
 window.APP_DATA = {
     "news": [
         {
-            "id": 21,
-            "date": "2026.03.11",
-            "title": "test",
-            "content": "これはtestです",
-            "status": "public"
-        },
-        {
             "id": 20,
             "date": "2026.03.10",
             "title": "#AISpringFES2026 出演者様インタビュー記事　10th Artist. noriyang",
